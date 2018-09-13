@@ -1,0 +1,25 @@
+﻿@model WebApplication1.Models.User
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h1>Login Page</h1>
+@Model.FirstName
+@Model.LastName
+@Model.Password
+<form action="/Users/Login/Success">
+    <div class="form-group">
+        <label for="email">Email address:</label>
+        <input type="email" class="form-control" id="email" value="@Model.FirstName@Model.LastName @@gmail.com">
+    </div>
+    <div class="form-group">
+        <label for="pwd">Password:</label>
+        <input type="password" class="form-control" id="pwd" placeholder="@Model.Password">
+    </div>
+    <div class="checkbox">
+        <label><input type="checkbox"> Remember me</label>
+    </div>
+    <button type="submit" class="btn btn-success">Login</button>
+</form>
+<div>Or @Html.ActionLink("Register", "Register", "Users") with a new account.</div>
